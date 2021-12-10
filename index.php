@@ -1,6 +1,10 @@
 <?php
+
+  session_start();
+
 include 'helpers/db_connection.php';
-  
+include 'helpers/functions.php';
+isAdmin();
   if(isset($_GET['page'])&& $_GET['page']){
       $page = $_GET['page'];
   }else{
@@ -31,9 +35,9 @@ include 'helpers/db_connection.php';
             </div>
             <div>
                 <span>
-                    John Doe
+                    <?= $_SESSION['user_name']?>
                 </span>
-                <span>Administrator</span>
+                <span><a href="logout.php" class='logout'>Log out</a></span>
             </div>
             <div>
                 <button>

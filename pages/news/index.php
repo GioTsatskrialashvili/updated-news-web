@@ -67,12 +67,16 @@ if(isset($_POST['action']) && $_POST['action'] == 'delete') {
     <div class="container-header">
         <h2>News</h2>
         <a href="<?='?' .$_SERVER['QUERY_STRING'] . '&action=add'?>" class="btn">Add New</a>
+
     </div>
     <form action="" class='search-bar'>
+    <input type="hidden" name="page" value="<?=$_GET['page']?>">
         <input type="text" name='search' placeholder='search for text'>
         <button>Search</button>
     </form>
     <form action="" class='sort'>
+        <input type="hidden" name="page" value="<?=$_GET['page']?>">
+        
             <select name="sort" id="">
                 <option value="id-desc">Date desc </option>
                 <option value="id-asc" <?= isset($_GET['sort']) && $_GET['sort']== 'id-asc'?'selected': ''?>>Date asc </option>

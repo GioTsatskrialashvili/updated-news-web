@@ -236,3 +236,19 @@ main{
         text-align: center;
         margin-bottom: 15;
     }.text{max-width: 200px;}
+    
+.login-container{
+    max-width: 40%;
+    margin: 50px auto;
+}
+.registration-btn{
+    
+    color: #6f5cc4;
+    font-size: 14px;
+}
+.logout{
+    color: white;
+}.acc{
+    margin-top: 10px;
+    color: rgba(0, 0, 0, 0.568) !important;
+}

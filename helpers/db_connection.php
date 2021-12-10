@@ -21,7 +21,12 @@ function getAll($sql){
 function getFirst($sql){
     global $conn;
     $result = mysqli_query($conn, $sql);
-    return mysqli_fetch_assoc($result); // []
+    if($result){
+        return mysqli_fetch_assoc($result);
+    }else{
+        return null;
+    }
+     // []
 }
 
 
