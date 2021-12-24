@@ -15,6 +15,13 @@ isAdmin();
 }else{
     $action='index';
 }
+if( isset($_COOKIE['mode']) && $_COOKIE['mode'] == 'dark' ) {
+    $mode = 'light';
+    $current_mode = 'dark';
+} elseif((isset($_COOKIE['mode']) && $_COOKIE['mode'] == 'light') || !isset($_COOKIE['mode'])) {
+    $mode = 'dark';
+    $current_mode = 'light';
+}
 
 ?>
 <html lang="en">
@@ -25,11 +32,17 @@ isAdmin();
     <title>Document</title>
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
-<body>
+<body  class="<?= $current_mode ?>">
 
     <header>
         <a href="index.php"><span class="logo">LOGO</span></a>
         <div class="user">
+            <div>
+                    <form action="setCookie.php" method="POST">
+                       
+                        <button onclick="changeMode(this)" data-mode="<?= $mode ?>" class="btn" id="mode">Switch to <?= ucfirst($mode) ?> Mode</button>
+                    </form>
+            </div>
             <div>
                 <img src="assets/img/user.png" alt="">
             </div>
@@ -50,7 +63,7 @@ isAdmin();
     <aside>
     <ul>
     <li class='<?= $page == 'dashboard'?'active': ''?>'>
-            <a href="?page=dashboard">Dashboard</a>
+            <a href="?page=dashboard">Subscribe</a>
         </li>
         <li class='<?= $page == 'categories'?'active': ''?>'>
             <a href="?page=categories">Categories</a>
@@ -64,6 +77,8 @@ isAdmin();
     </aside>
    <?php
     include 'pages/'.$page.'/'.$action.'.php';
+    
    ?>
+    <script src="assets/js/script.js"></script>
 </body>
 </html>

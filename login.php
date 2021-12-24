@@ -1,8 +1,8 @@
 <?php
-    
-   
+    session_start();
+    include 'helpers/functions.php';
     include 'helpers/db_connection.php';
-  
+    isGuest();
     $error="";
     if(isset($_POST['action'])&& $_POST['action']=='login'){
         $username=isset($_POST['username'])&& $_POST['username']!='' ? $_POST['username']:null;

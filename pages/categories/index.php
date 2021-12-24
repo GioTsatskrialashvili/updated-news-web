@@ -9,7 +9,7 @@ if(isset($_POST['action']) && $_POST['action'] == 'delete') {
     $sql = "DELETE FROM categories where id = " .$id;
 
     if(mysqli_query($conn, $sql)) {
-        header('Location:categories.php');
+        header('Location:?page=categories');
     } else {
         echo "Error";
     }

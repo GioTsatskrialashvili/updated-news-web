@@ -31,7 +31,7 @@ if(isset($_GET['search']) && $_GET['search']){
     $search = isset($_GET['search']) && $_GET['search'] ? $_GET['search'] : null; 
     $sql = "SELECT news.id as news_id, news.title as news_title, news.text, news.category_id, categories.id as cat_id, categories.title as category_title 
 FROM news 
- INNER JOIN categories ON news.category_id = categories.id where news.title || news.text like'%$search%'".$orderBy .' '.'LIMIT '.$limit .' '. $n;
+ INNER JOIN categories ON news.category_id = categories.id where news.title like '%$search%'".$orderBy .' '.'LIMIT '.$limit .' '. $n;
 
 $result = mysqli_query($conn, $sql);
 
@@ -72,7 +72,7 @@ if(isset($_POST['action']) && $_POST['action'] == 'delete') {
     <form action="" class='search-bar'>
     <input type="hidden" name="page" value="<?=$_GET['page']?>">
         <input type="text" name='search' placeholder='search for text'>
-        <button>Search</button>
+        <button class='btn'>Search</button>
     </form>
     <form action="" class='sort'>
         <input type="hidden" name="page" value="<?=$_GET['page']?>">

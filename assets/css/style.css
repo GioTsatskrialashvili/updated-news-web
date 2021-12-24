@@ -252,3 +252,62 @@ main{
     margin-top: 10px;
     color: rgba(0, 0, 0, 0.568) !important;
 }
+
+
+.dark .content form textarea{
+    background-color: #464646;
+}
+.dark .content form input,
+.content form select{
+    background-color: #464646;
+    border-color: black;
+}
+
+.dark .search-bar input{
+    background-color: #464646;
+    border-color: black;
+}
+.dark{
+    background-color: #686868;
+}
+
+.dark header{
+    background-color: #313131;
+}
+
+.dark aside{
+    background-color: #373737;
+}
+
+.dark aside li.active {
+    background-color: #313131;
+}
+
+.dark .content {
+    background: #a6a6a6;
+    box-shadow: unset;
+}
+
+.dark .container-header h2 {
+    color: white;
+}
+
+.dark .content table th {
+    border-bottom: 1px solid #8e8e8e;
+    color: white;
+}
+
+.dark .btn,
+.dark .content table .actions a, 
+.dark .content table .actions .delete{
+    background-color: black;
+}
+#msg{
+    display: none;
+}
+.subscribe-success form{
+    display: none;
+}
+.subscribe-success #msg{
+    display: block;
+}
