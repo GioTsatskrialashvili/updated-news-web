@@ -38,10 +38,10 @@ if( isset($_COOKIE['mode']) && $_COOKIE['mode'] == 'dark' ) {
         <a href="index.php"><span class="logo">LOGO</span></a>
         <div class="user">
             <div>
-                    <form action="setCookie.php" method="POST">
+                   
                        
-                        <button onclick="changeMode(this)" data-mode="<?= $mode ?>" class="btn" id="mode">Switch to <?= ucfirst($mode) ?> Mode</button>
-                    </form>
+                    <button onclick="changeMode(this)" data-mode="<?= $mode ?>" class="btn" id="mode"><?= ucfirst($mode) ?> Mode</button>
+                   
             </div>
             <div>
                 <img src="assets/img/user.png" alt="">
