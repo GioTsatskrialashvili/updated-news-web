@@ -4,6 +4,9 @@
 
 include 'helpers/db_connection.php';
 include 'helpers/functions.php';
+include 'models/Database.php';
+include 'models/Category.php';
+include 'models/News.php';
 isAdmin();
   if(isset($_GET['page'])&& $_GET['page']){
       $page = $_GET['page'];

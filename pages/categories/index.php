@@ -1,14 +1,16 @@
 <?php
-$sql = "SELECT * FROM categories";
-$result = mysqli_query($conn, $sql);
-$categories = mysqli_fetch_all($result, MYSQLI_ASSOC);
+$model= new Category();
+
+// $sql = "SELECT * FROM categories";
+// $result = mysqli_query($conn, $sql);
+$categories = $model->getAll("SELECT * FROM categories ORDER BY id DESC");
 
 if(isset($_POST['action']) && $_POST['action'] == 'delete') {
-    $id = $_POST['id'];
-
+    $id = isset($_POST['id'])?$_POST['id']:null;
+if($id){
     $sql = "DELETE FROM categories where id = " .$id;
-
-    if(mysqli_query($conn, $sql)) {
+}
+    if($model->queryExecute($sql)) {
         header('Location:?page=categories');
     } else {
         echo "Error";

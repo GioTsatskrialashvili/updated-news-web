@@ -1,5 +1,5 @@
 <?php
-
+    $models= new Category();
     $id = isset($_GET['id']) && $_GET['id'] ? $_GET['id'] : null; 
     
     if($id) {

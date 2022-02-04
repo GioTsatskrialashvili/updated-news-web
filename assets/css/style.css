@@ -258,7 +258,7 @@ main{
     background-color: #464646;
 }
 .dark .content form input,
-.content form select{
+.dark .content form select{
     background-color: #464646;
     border-color: black;
 }
